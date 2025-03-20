@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monish's Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            background: white;
+            color: #007bff;
+            border-radius: 5px;
+        }
+
+        /* Profile Image */
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-top: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            text-transform: uppercase;
+        }
+
+        /* Skills */
+        .skills img {
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skills img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Projects */
+        .project-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .calculator-project {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-project:hover {
+            background: #0056b3;
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Monissh B</h1>
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+    </nav>
+</header>
+
+<section id="home">
+    <h2>Welcome to My Portfolio</h2>
+    <div class="profile">
+        <img src="img/user.png" alt="Monish">
+    </div>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <p>Check out some of my work:</p>
+    <div class="project-container">
+        <a href="calculator.html" class="calculator-project">
+            🧮 Try the Smart Calculator!
+        </a>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <img src="img/html.png" alt="HTML">
+        <img src="img/css.png" alt="CSS">
+        <img src="img/javascript.png" alt="JavaScript">
+        <img src="img/bootstrap.png" alt="Bootstrap">
+        <img src="img/git.png" alt="Git">
+        <img src="img/jquery.png" alt="jQuery">
+        <img src="img/php.png" alt="PHP">
+        <img src="img/mysql.png" alt="MySQL">
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Experienced front-end web developer skilled in creating responsive and visually appealing user interfaces. Proficient in HTML, CSS, and JavaScript, with a focus on delivering seamless and intuitive user experiences. Passionate about staying current with industry trends and technologies to enhance web development projects. Dedicated to collaborating with cross-functional teams to bring creative ideas to life. Open to new opportunities that allow me to contribute my expertise to dynamic web development projects.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="text" placeholder="Your Address" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Opinion" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025. Designed and Developed by Monish B.
+</footer>
+
+</body>
+</html>
