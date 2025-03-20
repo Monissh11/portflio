@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBook Style Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            width: 320px;
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .display {
+            width: 100%;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            outline: none;
+            border: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            width: 100%;
+            height: 60px;
+            font-size: 22px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .number {
+            background: #444;
+            color: white;
+        }
+
+        .operator {
+            background: #ff9500;
+            color: white;
+        }
+
+        .equal {
+            background: #007bff;
+            color: white;
+        }
+
+        .clear {
+            background: #d9534f;
+            color: white;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Back to Portfolio Button */
+        .back-btn {
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .calculator {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" class="display" id="display" disabled>
+    <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button class="operator" onclick="appendValue('/')">/</button>
+        <button class="operator" onclick="appendValue('*')">×</button>
+        <button class="operator" onclick="appendValue('-')">−</button>
+
+        <button class="number" onclick="appendValue('7')">7</button>
+        <button class="number" onclick="appendValue('8')">8</button>
+        <button class="number" onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+
+        <button class="number" onclick="appendValue('4')">4</button>
+        <button class="number" onclick="appendValue('5')">5</button>
+        <button class="number" onclick="appendValue('6')">6</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+        <button class="number" onclick="appendValue('1')">1</button>
+        <button class="number" onclick="appendValue('2')">2</button>
+        <button class="number" onclick="appendValue('3')">3</button>
+        <button class="number" onclick="appendValue('0')" style="grid-column: span 2;">0</button>
+        <button class="number" onclick="appendValue('.')">.</button>
+    </div>
+</div>
+
+<!-- Back to Portfolio Button -->
+<a href="index.html" class="back-btn">🔙 Back to Portfolio</a>
+
+<script>
+    function appendValue(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        } catch {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+
+    document.addEventListener("keydown", function(event) {
+        const key = event.key;
+        if (/[\d+\-*/.=]/.test(key)) {
+            appendValue(key);
+        } else if (key === "Enter") {
+            calculate();
+        } else if (key === "Backspace") {
+            document.getElementById('display').value = document.getElementById('display').value.slice(0, -1);
+        } else if (key === "Escape") {
+            clearDisplay();
+        }
+    });
+</script>
+
+</body>
+</html>
